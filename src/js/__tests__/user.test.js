@@ -1,4 +1,4 @@
-import { loadUser } from '../user';
+import { loadUser, saveUser } from '../user';
 import { httpGet } from '../http';
 
 jest.mock('../http');
@@ -14,3 +14,15 @@ test('should call loadUser once', () => {
   expect(response).toEqual({});
   expect(httpGet).toHaveBeenCalledWith('http://server:8080/users/1');
 });
+
+
+test('should handle saveUser error', () => {
+	httpGet.mockReturnValue(JSON.stringify({}));
+  
+	const user = { name: 'John', age: 25 };
+	httpGet.mockRejectedValueOnce('Unimplemented');
+  
+	expect(() => {
+		saveUser(user);
+	}).toThrow('Unimplemented');
+  });

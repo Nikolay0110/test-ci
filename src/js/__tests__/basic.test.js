@@ -1,6 +1,7 @@
 import sum from '../basic';
-import power from '../app';
+// import power from '../app';
 
+import { sorting, power } from '../app';
 
 test('should sum', () => {
     const result = sum([1, 2, 3]);
@@ -31,4 +32,21 @@ test('testing power critical', () => {
     const expected = 'critical';
     const received = power(input);
     expect(received).toBe(expected);
+});
+
+test('testing sorting', () => {
+    const mass = [
+        {name: 'мечник', health: 10},
+        {name: 'маг', health: 100},
+        {name: 'лучник', health: 80},
+    ]
+
+    const expected = [
+        {name: 'маг', health: 100},
+        {name: 'лучник', health: 80},
+        {name: 'мечник', health: 10},
+    ]
+
+    const received = sorting(mass);
+    expect(received).toEqual(expected);
 });

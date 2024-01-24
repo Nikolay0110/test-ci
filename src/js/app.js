@@ -2,7 +2,7 @@
 import sum from './basic';
 
 
-export default function power(object) {
+function power(object) {
     if (object.health > 50) {
         return 'healthy';            
     } else if (object.health >= 15) {
@@ -11,6 +11,17 @@ export default function power(object) {
         return 'critical';
     }
 }
+
+
+function sorting(mass) {
+    mass.sort((a, b) => {
+        return b.health - a.health;
+    })
+    return mass
+}
+
+
+export { sorting, power }
 
 
 console.log('worked');
