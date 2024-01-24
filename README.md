@@ -1,3 +1,8 @@
+
+
+[![Build status](https://ci.appveyor.com/api/projects/status/et93mhd2ll9go393?svg=true)](https://ci.appveyor.com/project/Nikolay0110/test-ci)
+
+
 # Домашнее задание к лекции «Unit-тестирование»
 
 **Важно**: каждая задача выполняется в виде отдельного проекта с собственным GitHub репозиторием.
